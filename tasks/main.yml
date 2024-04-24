@@ -59,6 +59,7 @@
                 deb: /tmp/{{ package_file }}
                 state: present
               when: ansible_pkg_mgr == "apt"
+
             - name: Install dnf package
               ansible.builtin.dnf:
                 # If we downloaded the RPM signing key from Tenable
@@ -68,6 +69,7 @@
                 name: /tmp/{{ package_file }}
                 state: present
               when: ansible_pkg_mgr == "dnf"
+
             - name: Install yum package
               ansible.builtin.yum:
                 name: /tmp/{{ package_file }}
